@@ -97,3 +97,9 @@ def test_frontend_returns_html():
     response = client.get("/")
     assert response.status_code == 200
     assert "text/html" in response.headers.get("content-type", "")
+
+
+def test_frontend_accepts_head_requests():
+    """Health checks may probe the frontend with HEAD."""
+    response = client.head("/")
+    assert response.status_code == 200

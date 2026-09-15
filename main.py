@@ -234,6 +234,6 @@ def health():
     return {"status": "ok", "locations_loaded": len(LOCATIONS)}
 
 
-@app.get("/", include_in_schema=False)
+@app.api_route("/", methods=["GET", "HEAD"], include_in_schema=False)
 def frontend():
     return FileResponse(FRONTEND_PATH)
