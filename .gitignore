@@ -1,0 +1,19 @@
+# Runtime secrets and local integration credentials
+.env
+.env.*
+!.env.example
+bolna-mcp-config.json
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Frontend dependencies and development output
+frontend/node_modules/
+frontend/.vite/
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db

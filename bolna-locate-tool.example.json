@@ -1,0 +1,31 @@
+{
+  "name": "locate_place",
+  "description": "Use this function whenever the caller asks where a NIT Hamirpur campus building, department, hostel, lecture hall, facility, or landmark is located.",
+  "pre_call_message": "Let me check that location for you.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "The place the caller wants to find."
+      },
+      "origin": {
+        "type": "string",
+        "description": "The caller's stated starting point, such as gate 1, Kailash Hostel, or Central Library."
+      }
+    },
+    "required": ["query"]
+  },
+  "key": "custom_task",
+  "value": {
+    "method": "GET",
+    "param": {
+      "query": "%(query)s",
+      "origin": "%(origin)s"
+    },
+    "url": "https://YOUR-RENDER-APP.onrender.com/locate",
+    "headers": {
+      "x-api-key": "REPLACE_WITH_YOUR_LOCATE_API_KEY"
+    }
+  }
+}
